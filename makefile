@@ -27,16 +27,14 @@ CCOPTS = /d2 /omaxet /zp1 /4r /ei /j /zq /i=dmx
 
 GLOBOBJS = &
  i_main.obj &
- i_ibm.obj &
  i_sound.obj &
  i_cyber.obj &
- i_ibm_a.obj &
- planar.obj &
  tables.obj &
  f_finale.obj &
  d_main.obj &
  d_net.obj &
  g_game.obj &
+ m_fixed.obj &
  m_menu.obj &
  m_misc.obj &
  am_map.obj &
@@ -94,9 +92,6 @@ newdoom.exe : $(GLOBOBJS) i_ibm.obj
 
 .c.obj :
  wcc386 $(CCOPTS) $[*
-
-.asm.obj :
- tasm /mx $[*
 
 clean : .SYMBOLIC
  del *.obj

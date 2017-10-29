@@ -229,21 +229,21 @@ fixed_t	FixedMul (fixed_t a, fixed_t b);
 fixed_t	FixedDiv (fixed_t a, fixed_t b);
 fixed_t	FixedDiv2 (fixed_t a, fixed_t b);
 
-#pragma aux FixedMul =	\
-	"imul ebx",			\
-	"shrd eax,edx,16"	\
-	parm	[eax] [ebx] \
-	value	[eax]		\
-	modify exact [eax edx]
-
-#pragma aux FixedDiv2 =	\
-	"cdq",				\
-	"shld edx,eax,16",	\
-	"sal eax,16",		\
-	"idiv ebx"			\
-	parm	[eax] [ebx] \
-	value	[eax]		\
-	modify exact [eax edx]
+//#pragma aux FixedMul =	\
+//	"imul ebx",			\
+//	"shrd eax,edx,16"	\
+//	parm	[eax] [ebx] \
+//	value	[eax]		\
+//	modify exact [eax edx]
+//
+//#pragma aux FixedDiv2 =	\
+//	"cdq",				\
+//	"shld edx,eax,16",	\
+//	"sal eax,16",		\
+//	"idiv ebx"			\
+//	parm	[eax] [ebx] \
+//	value	[eax]		\
+//	modify exact [eax edx]
 
 #define SHORT(x)	(x)
 #define LONG(x)		(x)
